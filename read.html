@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooming Tales | Read</title>
+
+    <!-- google font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- css -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #FFF9C4, #FFE082);
+        }
+        main {
+            max-width: 800px;
+            margin: 70px auto 60px;
+            padding: 40px;
+            background-color: #fff9f0;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            line-height: 1.7;
+            position: relative;
+        }
+        #storyTitle {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+        }
+        #storyTitle::after {
+            content: "✨";
+            position: absolute;
+            right: -30px;
+            top: 0;
+            font-size: 1.5rem;
+        }
+        #storyContent {
+            font-size: 1.1rem;
+            text-align: justify;
+            padding: 15px 0;
+        }
+        #storyAuthor {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            color: #4CAF50;
+            font-weight: bold;
+        } 
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .back-btn:hover {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+        main::before,
+        main::after {
+            content: "🌸";
+            position: absolute;
+            font-size: 1.6rem;
+            opacity: 0.8;
+        }
+        main::before {
+            top: 15px;
+            left: 20px;
+        }
+        main::after {
+            bottom: 15px;
+            right: 20px;
+        }
+        @media (max-width: 768px) {
+            main {
+                max-width: 500px;
+            }
+        }
+        @media (max-width: 550px) {
+            main {
+                max-width: 250px;
+                padding: 30px;
+            }
+            #storyTitle {
+                font-size: 1.75rem;
+            }
+            #storyContent, #storyAuthor {
+                font-size: 1rem;
+            }
+            .back-btn {
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header  -->
+    <header>
+        <div class="logo">
+            🌼 Blooming<span>Tales</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home ☀️</a></li>
+                <li><a href="index.html#about">About Us 🌱</a></li>
+                <li><a href="index.html#stories">Story Garden 📖</a></li>
+                <li><a href="index.html#write">Write ✒️</a></li>
+                <li><a href="index.html#connect">Connect 💌</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- main section -->
+    <main>
+        <h2 id="storyTitle"></h2>
+        <div id="storyContent"></div>
+        <p id="storyAuthor"></p>
+        <a href="index.html#stories" class="back-btn">⬅ Back to Stories</a>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <p>© 2025 Blooming Tales | Crafted with ❤️ by <a href="https://saxenaharshit63.github.io/Portfolio-Website/"
+        target="_blank">Harshit Saxena</a>
+        </p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const title = decodeURIComponent(params.get("title"));
+
+        const defaultStories = [
+            {
+                title: "The Morning Blossom", story: "Every morning, the little girl would wake up just before sunrise. She would run to the garden barefoot, her hair still messy from sleep, and wait for the first light to touch the flowers. When the sun rose, the tulips and daisies opened their petals, and her eyes sparkled with the same joy. To her, every sunrise was not just another day, but a gift - an unspoken promise that happiness blooms again and again.", name: "Blooming Tales"
+            },
+            {
+                title: "Whispers of the Wind", story: "The wind carried stories no one else could hear. It danced through the trees, brushed against the rooftops, and whispered secrets into the ears of those willing to listen. Sometimes it sang of faraway lands, sometimes it carried the laughter of forgotten memories. To the poet who sat beneath the old oak tree, the wind wasn’t just air - it was a messenger of dreams.", name: "Blooming Tales"
+            },
+            {
+                title: "The Garden of Dreams", story: "There was a hidden garden where every dream took the shape of a flower. A child’s laughter grew into bright sunflowers, an artist’s imagination bloomed as roses of endless colors, and the quiet hope of a lonely soul became a glowing lily. The garden never stopped growing, because as long as people dreamed, the flowers would never stop blooming.", name: "Blooming Tales"
+            }
+        ];
+
+        const userStories = JSON.parse(localStorage.getItem("stories")) || [];
+        const allStories = [...defaultStories, ...userStories];
+
+        const story = allStories.find(st => st.title === title);
+
+        if (story) {
+            document.getElementById("storyTitle").textContent = story.title;
+            document.getElementById("storyAuthor").textContent = "- " + story.name;
+            document.getElementById("storyContent").textContent = story.story;
+        } else {
+            document.getElementById("storyContent").textContent = "Story not found.";
+        }
+    </script>
+</body>
+
+</html>

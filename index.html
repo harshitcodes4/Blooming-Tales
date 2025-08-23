@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooming Tales</title>
+
+    <!-- google font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- header  -->
+    <header>
+        <div class="logo">
+            🌼 Blooming<span>Tales</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home ☀️</a></li>
+                <li><a href="#about">About Us 🌱</a></li>
+                <li><a href="#stories">Story Garden 📖</a></li>
+                <li><a href="#write">Write ✒️</a></li>
+                <li><a href="#connect">Connect 💌</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- hero section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Blooming Tales</h1>
+            <p>A cozy place for story writers to share thoughts & creativity with the world.</p>
+            <a href="#write" class="btn">Start Writing</a>
+        </div>
+    </section>
+
+    <!-- about section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <h2>🌱 About Us</h2>
+            <p>
+                Blooming Tales is more than just a platform - it’s a garden of stories. Every writer is a seed, and
+                every story is a flower. Share your experiences, inspire others, and watch your ideas grow into
+                something beautiful.
+            </p>
+        </div>
+    </section>
+
+    <!-- story section -->
+    <section class="story-garden" id="stories">
+        <div class="container">
+            <h2>📖 Story Garden</h2>
+            <p>Explore stories from our community of writers. Every tale blooms with imagination!</p>
+
+            <div class="slider-container" id="slider"></div>
+            <button class="slider-btn prev" onclick="slide(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next" onclick="slide(1)"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <!-- write section -->
+    <section class="write" id="write">
+        <div class="write-container">
+            <h2>✒️ Write</h2>
+            <p>Your imagination blooms here! Write your story and see it appear in the Story Garden.</p>
+
+            <div class="write-form">
+                <input type="text" id="title" placeholder="Story Title" required>
+                <textarea id="story" rows="5" placeholder="Write your story..." required></textarea>
+                <input type="text" id="name" placeholder="Author Name" required>
+                <a href="#" id="submitStory" class="btn">Post Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- connect section -->
+    <section class="connect" id="connect">
+        <div class="connect-container">
+            <h2>💌 Connect</h2>
+            <p>Follow Us on social media and stay updated.</p>
+
+            <div class="social-links">
+                <a href="#" target="_blank" class="social-btn">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" class="social-btn">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank" class="social-btn">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-btn">
+                    <class class="fas fa-envelope"></class>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <p>© 2025 Blooming Tales | Crafted with ❤️ by <a href="https://saxenaharshit63.github.io/Portfolio-Website/"
+        target="_blank">Harshit Saxena</a>
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
