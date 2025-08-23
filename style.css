@@ -169,7 +169,6 @@ nav ul li a:hover {
     color: #f44336;
     font-size: 16px;
     cursor: pointer;
-    display: none;
 }
 .delete-btn:hover {
     color: #c62828;
@@ -386,4 +385,5 @@ footer a:hover {
     .footer {
         padding: 1rem;
     }
+
 }
